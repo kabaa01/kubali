@@ -1,0 +1,20 @@
+{
+ "operator": {
+  "name": "BellTower Enterprise Limited",
+  "email": "belltowerkenya@gmail.com"
+ },
+ "payments": {
+  "mpesaTill": "",
+  "mpesaPaybill": {
+   "no": ""
+  },
+  "pochiPhone": "",
+  "bank": {
+   "name": "",
+   "acct": "",
+   "swift": ""
+  },
+  "links": []
+ },
+ "note": "Fill in YOUR OWN receiving channels. This file is public: never put passwords, API secrets or PINs here. links example: [{\"label\":\"Pay by card or M-Pesa\",\"url\":\"https://...\"}] (https only)."
+}

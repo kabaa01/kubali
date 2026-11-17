@@ -1,0 +1,61 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Sign up – Kubali</title><meta name="theme-color" content="#0b6b3a"><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icon.svg">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self' https://formspree.io https://*.supabase.co; base-uri 'none'; form-action 'none'">
+<style>
+:root{--bg:#f6f8f6;--fg:#14211a;--card:#fff;--br:#cfd9d2;--pri:#0b6b3a;--onp:#fff;--warn:#8a4b00;--wbg:#fff3e0;--bad:#a4161a}
+@media(prefers-color-scheme:dark){:root{--bg:#0f1713;--fg:#e8f0ea;--card:#17221c;--br:#2f4036;--pri:#3ecf80;--onp:#06150d;--warn:#ffc069;--wbg:#33230c;--bad:#ff8a8d}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.5 system-ui,sans-serif;padding:env(safe-area-inset-top) 0 env(safe-area-inset-bottom)}
+main{max-width:640px;margin:auto;padding:16px}h1{font-size:22px}fieldset{border:1px solid var(--br);border-radius:10px;margin:12px 0;padding:10px 12px;background:var(--card)}legend{font-weight:700;padding:0 6px}
+label{display:block;font-size:14px;margin:8px 0 2px}input,select,button{font:inherit;color:inherit;background:var(--card);border:1px solid var(--br);border-radius:8px;padding:10px;width:100%}input[type=checkbox],input[type=radio]{width:auto;margin-right:8px}
+.c{display:flex;align-items:flex-start;font-size:14px}.c input{margin-top:4px}button{background:var(--pri);color:var(--onp);border:0;font-weight:700;cursor:pointer;margin-top:12px}button:disabled{opacity:.6}
+.w{background:var(--wbg);color:var(--warn);border-radius:8px;padding:8px 10px;font-size:14px;margin:8px 0}.e{color:var(--bad);font-size:13px;min-height:1em}.hp{position:absolute;left:-9999px}small{opacity:.85}
+:focus-visible{outline:3px solid var(--pri);outline-offset:2px}a{color:var(--pri)}#sum{border:2px solid var(--bad);border-radius:8px;padding:8px;display:none}.pl{display:grid;gap:8px}.pl label{border:1px solid var(--br);border-radius:8px;padding:8px;margin:0;display:flex;gap:6px}
+</style></head><body><main>
+<h1>✔ Create your Kubali account</h1><p><small>Free to start. No password to remember or leak: we use one-time sign-in links. <a href="index.html">Back to app</a></small></p>
+<div class="w"><b>Notice:</b> Kubali is a tool, not a bank, escrow agent, law firm or adviser. We do not hold your money and do not guarantee any user. Illegal activity is prohibited.</div>
+<div id="sum" role="alert" tabindex="-1"></div>
+<form id="f" novalidate>
+<input class="hp" name="website" id="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+<fieldset><legend>About you</legend>
+<label for="name">Full name</label><input id="name" autocomplete="name" maxlength="80" required aria-describedby="e_name"><div class="e" id="e_name"></div>
+<label for="email">Email</label><input id="email" type="email" autocomplete="email" maxlength="120" required aria-describedby="e_email"><div class="e" id="e_email"></div>
+<label for="country">Country</label><select id="country"><option value="KE">Kenya (+254)</option><option value="UG">Uganda (+256)</option><option value="TZ">Tanzania (+255)</option><option value="RW">Rwanda (+250)</option><option value="NG">Nigeria (+234)</option><option value="ZA">South Africa (+27)</option><option value="GB">United Kingdom (+44)</option><option value="US">United States (+1)</option><option value="AE">UAE (+971)</option><option value="DE">Germany (+49)</option><option value="CA">Canada (+1)</option><option value="IN">India (+91)</option><option value="AU">Australia (+61)</option><option value="XX">Other (enter +code)</option></select>
+<label for="phone">Mobile phone</label><input id="phone" type="tel" autocomplete="tel" placeholder="0712 345 678 or +44…" required aria-describedby="e_phone"><div class="e" id="e_phone"></div>
+<label for="type">Account type</label><select id="type"><option value="individual">Individual</option><option value="business">Business / SME</option></select>
+<div id="biz" hidden><label for="kra">KRA PIN (Kenyan businesses, optional)</label><input id="kra" maxlength="11" placeholder="A123456789Z" aria-describedby="e_kra"><div class="e" id="e_kra"></div><label for="reg">Business registration no. (optional)</label><input id="reg" maxlength="30"></div></fieldset>
+<fieldset><legend>Plan (no payment on this page)</legend><div class="pl">
+<label><input type="radio" name="plan" value="free" checked><span><b>Free</b> – post, match, 5 active deals. KES 0</span></label>
+<label><input type="radio" name="plan" value="pro"><span><b>Pro</b> – unlimited deals, reminders, branded PDF records. Indicative KES 299/mo (~USD 2.5)</span></label>
+<label><input type="radio" name="plan" value="business"><span><b>Business</b> – team seats, VAT/eTIMS-ready exports, priority support. Indicative KES 1,499/mo (~USD 12)</span></label></div>
+<div class="e" id="e_plan"></div><small>Prices are indicative and may change. Separately, a per-deal service fee applies to every completed deal under the published sliding scale (minimum KES 10, no cap, 16% VAT where applicable; see the Legal tab). It is shown before you propose any deal, is due only when both parties record completion, and is waived if a deal is cancelled or disputed. Taxes (e.g. VAT) may apply. Paid plans are billed only after you confirm at checkout, with a refund/cancel policy shown there.</small></fieldset>
+<fieldset><legend>Consent (Data Protection Act, 2019 / GDPR)</legend>
+<label class="c"><input type="checkbox" id="c18"> <span>I am 18 or older and the details above are true.</span></label><div class="e" id="e_c18"></div>
+<label class="c"><input type="checkbox" id="ctos"> <span>I accept the Terms and Privacy Notice (see below) and will not use Kubali for unlawful purposes.</span></label><div class="e" id="e_ctos"></div>
+<label class="c"><input type="checkbox" id="cxb"> <span>I understand my data may be processed by service providers outside Kenya under safeguards (cross-border transfer). </span></label><div class="e" id="e_cxb"></div>
+<label class="c"><input type="checkbox" id="cid"> <span><i>Optional:</i> I agree to ID verification by a licensed provider to earn a “Verified” badge.</span></label>
+<label class="c"><input type="checkbox" id="cmk"> <span><i>Optional:</i> send me product news. I can unsubscribe anytime.</span></label></fieldset>
+<details><summary><b>Privacy summary &amp; terms</b></summary><p><small><b>Controller:</b> BellTower Enterprise Limited, P.O. Box 142 Village Market, Nairobi 00621, Kenya; belltowerkenya@gmail.com; +254 729 446 242 (company reg. no., KRA PIN and ODPC registration no.: [add before launch]). <b>Purpose:</b> create and secure your account, provide the service, billing, fraud prevention, legal compliance. <b>Data:</b> name, email, phone, country, plan, consents (minimal). <b>Basis:</b> your consent and contract. <b>Retention:</b> while the account is active plus the period the law requires; then deleted. <b>Rights:</b> access, correction, deletion, objection, portability, complaint to the ODPC (Kenya) or your local authority. <b>Sharing:</b> only hosting, payment and verification processors; never sold. <b>Security:</b> encryption in transit, access controls, aligned to ISO/IEC 27001. <b>Terms:</b> the service is provided as is; no funds are held; you are responsible for your dealings; Kenyan law governs, without limiting mandatory consumer rights in your country. Have these texts reviewed by an advocate.</small></p></details>
+<button id="go" type="submit">Create account</button><p class="e" id="msg" role="status" aria-live="polite"></p></form>
+<script>
+const CONFIG={ENDPOINT:'' /* e.g. https://formspree.io/f/xxxx or a Supabase edge function */,VERSION:'2026-11-16'};
+const $=s=>document.querySelector(s),T0=Date.now(),DC={KE:'254',UG:'256',TZ:'255',RW:'250',NG:'234',ZA:'27',GB:'44',US:'1',AE:'971',DE:'49',CA:'1',IN:'91',AU:'61'};
+function normPhone(p,c){p=String(p||'').replace(/[\s()-]/g,'');if(c==='KE'){const m=p.match(/^(?:\+?254|0)([17]\d{8})$/);return m?'+254'+m[1]:null}
+if(p.startsWith('0')&&DC[c])p='+'+DC[c]+p.slice(1);return/^\+[1-9]\d{7,14}$/.test(p)?p:null}
+function validate(d){const e={};if(!d.name||d.name.trim().length<3||!/\s/.test(d.name.trim()))e.name='Enter your first and last name.';
+if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(d.email||''))e.email='Enter a valid email address.';if(!normPhone(d.phone,d.country))e.phone='Enter a valid mobile number.';
+if(d.type==='business'&&d.country==='KE'&&d.kra&&!/^[AP]\d{9}[A-Z]$/i.test(d.kra))e.kra='KRA PIN looks like A123456789Z.';
+if(d.plan==='business'&&d.type!=='business')e.plan='The Business plan needs Account type “Business / SME”.';if(!d.c18)e.c18='Required.';if(!d.ctos)e.ctos='Required.';if(!d.cxb)e.cxb='Required.';return e}
+if(typeof document!=='undefined'){
+$('#type').onchange=()=>$('#biz').hidden=$('#type').value!=='business';
+$('#f').addEventListener('submit',async ev=>{ev.preventDefault();const g=i=>$('#'+i).value.trim(),k=i=>$('#'+i).checked,msg=$('#msg');msg.textContent='';
+const d={name:g('name'),email:g('email').toLowerCase(),country:g('country'),phone:g('phone'),type:g('type'),plan:document.querySelector('input[name=plan]:checked').value,kra:g('kra').toUpperCase(),c18:k('c18'),ctos:k('ctos'),cxb:k('cxb')};
+['name','email','phone','kra','plan','c18','ctos','cxb'].forEach(i=>{const x=$('#e_'+i);if(x)x.textContent=''});const er=validate(d),ks=Object.keys(er);
+if(ks.length){ks.forEach(i=>$('#e_'+i).textContent=er[i]);const s=$('#sum');s.style.display='block';s.textContent='Please fix '+ks.length+' field(s) below.';s.focus();return}$('#sum').style.display='none';
+if($('#website').value||Date.now()-T0<3000){msg.textContent='Please try again.';return}
+let L=0;try{L=+localStorage.getItem('kubali_su_t')||0}catch(x){}if(Date.now()-L<30000){msg.textContent='Please wait a few seconds before retrying.';return}
+const rec={name:d.name,email:d.email,phone:normPhone(d.phone,d.country),country:d.country,type:d.type,kra:d.kra||undefined,reg:g('reg')||undefined,plan:d.plan,
+consent:{terms:true,age18:true,crossBorder:true,idVerification:k('cid'),marketing:k('cmk'),version:CONFIG.VERSION,at:new Date().toISOString()}};
+$('#go').disabled=true;try{if(CONFIG.ENDPOINT){const r=await fetch(CONFIG.ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(rec)});if(!r.ok)throw new Error('server '+r.status)}
+try{const S=JSON.parse(localStorage.getItem('kubali1'))||{};S.deals=S.deals||[];S.posts=S.posts||[];S.me={name:rec.name,phone:rec.phone};localStorage.setItem('kubali1',JSON.stringify(S));localStorage.setItem('kubali_su',JSON.stringify({plan:rec.plan,consent:rec.consent}));localStorage.setItem('kubali_su_t',String(Date.now()))}catch(x){}
+$('#f').innerHTML='<h2>✔ '+(CONFIG.ENDPOINT?'Check your email':'Profile saved on this device')+'</h2><p>'+(CONFIG.ENDPOINT?'We sent a one-time sign-in link to confirm your email.':'Demo mode: no server is connected, so nothing left your device.')+'</p><p><a href="index.html">Open Kubali</a></p>'}
+catch(x){msg.textContent='Could not complete sign-up. Check your connection and retry.';$('#go').disabled=false}})}
+</script></main></body></html>
